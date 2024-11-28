@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#tablero .celda {
+    width: 90px;
+    height: 90px;
+    border: 1px solid black;
+    display: grid;
+    font-size: 3rem;
+    place-items: center;
+    float: left;
+}
+#tablero {
+    width: 300px;
+    text-align: center;
+}
