@@ -7,7 +7,7 @@ for(let i = 0;i < celdas.length;i++){
 }
 function movimiento(e){
     let valorCelda = e.target.innerHTML
-    if (!valorCelda){
+    if (!valorCelda.length){
         e.target.innerHTML = turnoP1? "X": "O";
         turnoP1 = !turnoP1
         revision(0,1,2)
@@ -24,7 +24,15 @@ function movimiento(e){
 }
 function revision(c1,c2,c3){
   if(
-    celdas[c1].innerHTML.length && 
-    celdas[c1].innerHTML = celdas[c2]
-  )
+     celdas[c1].innerHTML.length &&
+    celdas[c1].innerHTML == celdas[c2].innerHTML &&
+    celdas[c2].innerHTML == celdas[c3].innerHTML
+  ){
+    ganador(celdas[c1].innerHTML)
+  }
+}
+
+function ganador(x){
+  let container = document.getElementById("resultado")
+  container.innerHTML =   `<span>${x} gano</span> `;
 }
